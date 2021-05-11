@@ -8,6 +8,7 @@ import {
 import Gallery from '../containers/Gallery';
 import NavBar from '../containers/NavBar';
 import Details from '../containers/Details';
+import Upload from '../containers/Upload';
 
 
 export default class BaseRouter extends React.Component {      
@@ -22,6 +23,9 @@ export default class BaseRouter extends React.Component {
                 <NavBar/>
                 <Switch>
                     <Route path="/details/:imageId" component={this.Image}/>
+                    <Route path="/upload">
+                        <Upload/>
+                    </Route>
                     <Route path="/">
                         <Gallery/>
                     </Route>

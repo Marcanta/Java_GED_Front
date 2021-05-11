@@ -16,4 +16,14 @@ export default class ImageService {
             return [];
         }
     }
+    
+    static async create(data) {
+        const formData = new FormData();
+        Object.keys(data).forEach(key => formData.append(key, data[key] ?? ""));
+        try {
+            return (await axios.post("/images", formData, {headers: { "Content-Type": "multipart/form-data" }})).data;
+        } catch {
+            return null;
+        }
+    }
 }
