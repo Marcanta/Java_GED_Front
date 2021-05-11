@@ -1,5 +1,14 @@
 .apercu {
-height:20rem;
-background-size:cover;
-background-position:center; 
+height:40rem;
+background-size:contain;
+background-repeat: no-repeat;
+background-position:center;
+}
+
+.my-link-white:focus, .my-link-white:hover {
+color: #6c757d;
+}
+
+.my-link-white {
+color: white;
 }
