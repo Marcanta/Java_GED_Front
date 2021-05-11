@@ -69,7 +69,6 @@ transform:scale(1.2);
 
 .hovereffect:hover .overlay {
 opacity:1;
-cursor: pointer;
 filter:alpha(opacity=100);
 }
 
