@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageService from '../API/ImageService';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import './Details.css';
 
@@ -40,7 +40,13 @@ export default class Details extends React.Component {
                             <h3 className="me-4">Date: {new Date(date).toISOString().split('T')[0]}</h3>
                             <h3>Category: {category}</h3>
                         </div>
-                        <h3>{description}</h3>  
+                        <div className="d-flex flex-row justify-content-center">
+                            <h3 className="me-4">Persons: {nbPersons}</h3>
+                            <h3>Objects: {objects}</h3>
+                        </div>
+                        <div className="d-flex flex-row justify-content-center">
+                            <h3>{description}</h3>
+                        </div>
                     </div>
                 </div>
             );

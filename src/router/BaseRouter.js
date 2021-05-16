@@ -3,7 +3,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
 } from 'react-router-dom';
 import Gallery from '../containers/Gallery';
 import NavBar from '../containers/NavBar';

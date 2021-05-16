@@ -1,4 +1,5 @@
 import axios from "./axios-wrapper";
+import { formatData } from "../utils/analyseTool";
 
 export default class ImageService {
     static async getAll() {
@@ -24,6 +25,20 @@ export default class ImageService {
             return (await axios.post("/images", formData, {headers: { "Content-Type": "multipart/form-data" }})).data;
         } catch {
             return null;
+        }
+    }
+
+    static async analyze(file) {
+        const formData = new FormData();
+        formData.append("name", file.name);
+        formData.append("file", file);
+        try {
+            const response = (await axios.post("/images/analyze", formData, { headers: { "Content-Type": "multipart/form-data" } })).data;
+            console.log(response);
+            return formatData(response);
+        } catch (e) {
+            console.error(e);
+            return {objects: "", persons: ""};
         }
     }
 }
